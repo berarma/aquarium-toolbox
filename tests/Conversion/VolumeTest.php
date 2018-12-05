@@ -3,7 +3,7 @@ namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\Conversion\Volume;
 
-class VolumeTest extends PHPUnit\Framework\TestCase
+class VolumeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCreation()

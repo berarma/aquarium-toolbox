@@ -1,11 +1,12 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\Solution;
 use Berarma\AquariumToolbox\Compound;
 use Berarma\AquariumToolbox\Conversion\Mass;
 use Berarma\AquariumToolbox\Conversion\Volume;
 
-class SolutionTest extends PHPUnit_Framework_TestCase
+class SolutionTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $solution;
@@ -79,4 +80,3 @@ class SolutionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(4.0052, $solution->kh(), null, 1e-4);
     }
 }
-

@@ -1,8 +1,9 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\Conversion\Volume;
 
-class VolumeTest extends PHPUnit_Framework_TestCase
+class VolumeTest extends PHPUnit\Framework\TestCase
 {
 
     public function testCreation()
@@ -41,4 +42,3 @@ class VolumeTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('3l', $volume->__toString());
     }
 }
-

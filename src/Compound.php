@@ -99,4 +99,3 @@ class Compound implements CompoundInterface
         return new Mass($this->data['elements'][$element] * $this->mass->toUnit());
     }
 }
-

@@ -1,8 +1,9 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\Conversion\Concentration;
 
-class ConcentrationTest extends PHPUnit_Framework_TestCase
+class ConcentrationTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCreation()
@@ -33,4 +34,3 @@ class ConcentrationTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('3ppm', $concentration->__toString());
     }
 }
-

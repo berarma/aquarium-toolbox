@@ -21,4 +21,3 @@ class DosingMethod
         return new Concentration($this->data[$element]['method'], 'ppm');
     }
 }
-

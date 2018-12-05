@@ -63,7 +63,9 @@ class AquariumAssistant
         if ($target->toUnit() * $compound->getVolume()->toUnit() >= $compound->element($element)->toUnit()) {
             throw new ImpossibleCalculation();
         }
-        return $target->toUnit() * $this->volume->toUnit() / ($compound->element($element)->toUnit() - $target->toUnit() * $compound->getVolume()->toUnit());
+        return $target->toUnit() * $this->volume->toUnit() /
+            ($compound->element($element)->toUnit() - $target->toUnit() *
+            $compound->getVolume()->toUnit());
     }
 
     /**
@@ -109,7 +111,9 @@ class AquariumAssistant
         if ($compound->getVolume()->toUnit() * $gh >= $solution->getVolume()->toUnit() * $solution->gh()) {
             throw new ImpossibleCalculation();
         }
-        return $gh * $this->volume->toUnit() / ($solution->getVolume()->toUnit() * $solution->gh() - $compound->getVolume()->toUnit() * $gh);
+        return $gh * $this->volume->toUnit() /
+            ($solution->getVolume()->toUnit() * $solution->gh() -
+            $compound->getVolume()->toUnit() * $gh);
     }
 
     /**
@@ -132,7 +136,9 @@ class AquariumAssistant
         if ($compound->getVolume()->toUnit() * $kh >= $solution->getVolume()->toUnit() * $solution->kh()) {
             throw new ImpossibleCalculation();
         }
-        return $kh * $this->volume->toUnit() / ($solution->getVolume()->toUnit() * $solution->kh() - $compound->getVolume()->toUnit() * $kh);
+        return $kh * $this->volume->toUnit() /
+            ($solution->getVolume()->toUnit() * $solution->kh() -
+            $compound->getVolume()->toUnit() * $kh);
     }
 
     /**
@@ -150,4 +156,3 @@ class AquariumAssistant
         return new Solution($compound, new Volume($this->volume->toUnit() + $compound->getVolume()->toUnit()));
     }
 }
-

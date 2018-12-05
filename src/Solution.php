@@ -51,9 +51,12 @@ class Solution implements CompoundInterface
     public function concentration($element = null)
     {
         if ($element === null) {
-            return new Concentration($this->getCompound()->getMass()->toUnit('mg') / $this->getVolume()->toUnit('l'), 'ppm');
+            return new
+                Concentration($this->getCompound()->getMass()->toUnit('mg') /
+                $this->getVolume()->toUnit('l'), 'ppm');
         } else {
-            return new Concentration($this->element($element)->toUnit('mg') / $this->getVolume()->toUnit('l'), 'ppm');
+            return new Concentration($this->element($element)->toUnit('mg') /
+                $this->getVolume()->toUnit('l'), 'ppm');
         }
     }
 
@@ -71,7 +74,9 @@ class Solution implements CompoundInterface
         static $caHardnessFactor = 56.0774 / 40.078 / 0.01;
         static $mgHardnessFactor = 56.0774 / 24.305 / 0.01;
 
-        return ($this->element('Ca')->toUnit('g') * $caHardnessFactor + $this->element('Mg')->toUnit('g') * $mgHardnessFactor) / $this->getVolume()->toUnit('l');
+        return ($this->element('Ca')->toUnit('g') * $caHardnessFactor +
+            $this->element('Mg')->toUnit('g') * $mgHardnessFactor) /
+            $this->getVolume()->toUnit('l');
     }
 
     public function kh()
@@ -88,7 +93,8 @@ class Solution implements CompoundInterface
         static $co3HardnessFactor = 100.0869 / 60.0089 / 0.017848;
         static $hco3HardnessFactor = 100.0869 / 61.0168 / 0.017848 / 2;
 
-        return ($this->element('CO3')->toUnit('g') * $co3HardnessFactor + $this->element('HCO3')->toUnit('g') * $hco3HardnessFactor) / $this->getVolume()->toUnit('l');
+        return ($this->element('CO3')->toUnit('g') * $co3HardnessFactor +
+            $this->element('HCO3')->toUnit('g') * $hco3HardnessFactor) /
+            $this->getVolume()->toUnit('l');
     }
 }
-

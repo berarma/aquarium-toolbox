@@ -1,8 +1,9 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\Conversion\Mass;
 
-class MassTest extends PHPUnit_Framework_TestCase
+class MassTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCreation()
@@ -41,4 +42,3 @@ class MassTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('3kg', $mass->__toString());
     }
 }
-

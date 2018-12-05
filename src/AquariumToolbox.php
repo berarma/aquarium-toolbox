@@ -126,4 +126,3 @@ class AquariumToolbox
         return new DosingMethod($this->data['dosingMethods'][$methodId]);
     }
 }
-

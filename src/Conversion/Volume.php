@@ -10,7 +10,9 @@ class Volume
 
     public function __construct($value, $unit = null)
     {
-        $this->conversion = new LinearConversion('l', [
+        $this->conversion = new LinearConversion(
+            'l',
+            [
             'l' => 1,
             'dl' => 1e-1,
             'cl' => 1e-2,
@@ -25,11 +27,12 @@ class Volume
             'cup' => 2.5e-1,
             'us_cup' => 2.3659e-1,
             'uk_cup' => 2.841e-1,
-        ],
-        [
+            ],
+            [
             'l' => [0.1, null],
             'ml' => [null, 0.1],
-        ]);
+            ]
+        );
         $this->value = $this->conversion->fromUnit($value, $unit);
     }
 

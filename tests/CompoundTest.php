@@ -1,10 +1,11 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\Compound;
 use Berarma\AquariumToolbox\Conversion\Mass;
 use Berarma\AquariumToolbox\Conversion\Volume;
 
-class CompoundTest extends PHPUnit_Framework_TestCase
+class CompoundTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $compound;
@@ -47,4 +48,3 @@ class CompoundTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(0.9615, $this->compound->getVolume()->toUnit('ml'), null, 0.0001);
     }
 }
-

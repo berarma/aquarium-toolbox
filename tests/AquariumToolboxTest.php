@@ -1,11 +1,12 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\AquariumToolbox;
 use Berarma\AquariumToolbox\Conversion\Mass;
 use Berarma\AquariumToolbox\Conversion\Volume;
 use Berarma\AquariumToolbox\Conversion\Concentration;
 
-class AquariumToolboxTest extends PHPUnit_Framework_TestCase
+class AquariumToolboxTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $toolbox;
@@ -70,4 +71,3 @@ class AquariumToolboxTest extends PHPUnit_Framework_TestCase
         $this->assertNull($this->toolbox->getDosingMethod('MadeUpName'));
     }
 }
-

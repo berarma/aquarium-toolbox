@@ -1,4 +1,5 @@
 <?php
+namespace Berarma\AquariumToolbox\Tests;
 
 use Berarma\AquariumToolbox\AquariumAssistant;
 use Berarma\AquariumToolbox\Compound;
@@ -8,7 +9,7 @@ use Berarma\AquariumToolbox\Conversion\Volume;
 use Berarma\AquariumToolbox\Conversion\Mass;
 use Berarma\AquariumToolbox\Conversion\Concentration;
 
-class AquariumAssistantTest extends PHPUnit_Framework_TestCase
+class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $assistant;
@@ -44,16 +45,46 @@ class AquariumAssistantTest extends PHPUnit_Framework_TestCase
 
     public function testTargetElement()
     {
-        $this->assertEquals(1.6305, $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound), null, 0.0001);
-        $this->assertEquals(2.5860, $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound, 'K'), null, 0.0001);
-        $this->assertEquals(1.6575, $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution), null, 0.0001);
-        $this->assertEquals(2.6546, $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution, 'K'), null, 0.0001);
+        $this->assertEquals(
+            1.6305,
+            $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound),
+            null,
+            0.0001
+        );
+        $this->assertEquals(
+            2.5860,
+            $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound, 'K'),
+            null,
+            0.0001
+        );
+        $this->assertEquals(
+            1.6575,
+            $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution),
+            null,
+            0.0001
+        );
+        $this->assertEquals(
+            2.6546,
+            $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution, 'K'),
+            null,
+            0.0001
+        );
     }
 
     public function testTargetDosingMethod()
     {
-        $this->assertEquals(1.2229, $this->assistant->targetDosingMethod($this->dosingMethod, $this->compound, 'NO3'), null, 0.0001);
-        $this->assertEquals(1.2380, $this->assistant->targetDosingMethod($this->dosingMethod, $this->solution, 'NO3'), null, 0.0001);
+        $this->assertEquals(
+            1.2229,
+            $this->assistant->targetDosingMethod($this->dosingMethod, $this->compound, 'NO3'),
+            null,
+            0.0001
+        );
+        $this->assertEquals(
+            1.2380,
+            $this->assistant->targetDosingMethod($this->dosingMethod, $this->solution, 'NO3'),
+            null,
+            0.0001
+        );
     }
 
     public function testTargetGh()
@@ -87,4 +118,3 @@ class AquariumAssistantTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(99.8752, $this->assistant->targetKh(4, $compound), null, 0.0001);
     }
 }
-

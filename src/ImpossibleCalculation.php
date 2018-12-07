@@ -1,5 +1,5 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
 class ImpossibleCalculation extends Exception
 {

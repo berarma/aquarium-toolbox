@@ -1,17 +1,16 @@
 <?php
-namespace Berarma\AquariumToolbox\Tests;
+namespace AquaTx\Test;
 
-use Berarma\AquariumToolbox\AquariumAssistant;
-use Berarma\AquariumToolbox\Compound;
-use Berarma\AquariumToolbox\Solution;
-use Berarma\AquariumToolbox\DosingMethod;
-use Berarma\AquariumToolbox\Conversion\Volume;
-use Berarma\AquariumToolbox\Conversion\Mass;
-use Berarma\AquariumToolbox\Conversion\Concentration;
+use AquaTx\Calculator;
+use AquaTx\Compound;
+use AquaTx\Solution;
+use AquaTx\DosingMethod;
+use AquaTx\Conversion\Volume;
+use AquaTx\Conversion\Mass;
+use AquaTx\Conversion\Concentration;
 
-class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
+class CalculatorTest extends \PHPUnit\Framework\TestCase
 {
-
     protected $assistant;
 
     protected $compound;
@@ -20,7 +19,7 @@ class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
 
     public function setUp()
     {
-        $this->assistant = new AquariumAssistant(new Volume(100, 'l'));
+        $this->assistant = new Calculator(new Volume(100, 'l'));
         $this->assistant->setVolume(new Volume(100, 'l'));
         $this->compound = new Compound([
             'tsp' => 5200,
@@ -48,25 +47,25 @@ class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             1.6305,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound),
-            null,
+            '',
             0.0001
         );
         $this->assertEquals(
             2.5860,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound, 'K'),
-            null,
+            '',
             0.0001
         );
         $this->assertEquals(
             1.6575,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution),
-            null,
+            '',
             0.0001
         );
         $this->assertEquals(
             2.6546,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution, 'K'),
-            null,
+            '',
             0.0001
         );
     }
@@ -76,13 +75,13 @@ class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             1.2229,
             $this->assistant->targetDosingMethod($this->dosingMethod, $this->compound, 'NO3'),
-            null,
+            '',
             0.0001
         );
         $this->assertEquals(
             1.2380,
             $this->assistant->targetDosingMethod($this->dosingMethod, $this->solution, 'NO3'),
-            null,
+            '',
             0.0001
         );
     }
@@ -100,9 +99,9 @@ class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
                 'Mn' => 0.0006,
             ],
         ], new Mass(16, 'g'));
-        $this->assertEquals(1.4851, $this->assistant->targetGh(4, $compound), null, 0.0001);
+        $this->assertEquals(1.4851, $this->assistant->targetGh(4, $compound), '', 0.0001);
         $solution = new Solution($compound, new Volume(1, 'l'));
-        $this->assertEquals(1.5071, $this->assistant->targetGh(4, $solution), null, 0.0001);
+        $this->assertEquals(1.5071, $this->assistant->targetGh(4, $solution), '', 0.0001);
     }
 
     public function testTargetKh()
@@ -115,6 +114,6 @@ class AquariumAssistantTest extends \PHPUnit\Framework\TestCase
                 'Na' => 0.273665728,
             ],
         ], new Mass(120, 'mg'));
-        $this->assertEquals(99.8752, $this->assistant->targetKh(4, $compound), null, 0.0001);
+        $this->assertEquals(99.8752, $this->assistant->targetKh(4, $compound), '', 0.0001);
     }
 }

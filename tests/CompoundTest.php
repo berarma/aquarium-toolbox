@@ -1,13 +1,12 @@
 <?php
-namespace Berarma\AquariumToolbox\Tests;
+namespace AquaTx\Test;
 
-use Berarma\AquariumToolbox\Compound;
-use Berarma\AquariumToolbox\Conversion\Mass;
-use Berarma\AquariumToolbox\Conversion\Volume;
+use AquaTx\Compound;
+use AquaTx\Conversion\Mass;
+use AquaTx\Conversion\Volume;
 
 class CompoundTest extends \PHPUnit\Framework\TestCase
 {
-
     protected $compound;
 
     public function setUp()
@@ -31,20 +30,20 @@ class CompoundTest extends \PHPUnit\Framework\TestCase
 
     public function testElement()
     {
-        $this->assertInstanceOf('\Berarma\AquariumToolbox\Conversion\Mass', $this->compound->element());
-        $this->assertEquals(0.6133, $this->compound->element()->toUnit('g'), null, 0.0001);
-        $this->assertEquals(0.138539, $this->compound->element('N')->toUnit('g'), null, 0.000001);
+        $this->assertInstanceOf('\AquaTx\Conversion\Mass', $this->compound->element());
+        $this->assertEquals(0.6133, $this->compound->element()->toUnit('g'), '', 0.0001);
+        $this->assertEquals(0.138539, $this->compound->element('N')->toUnit('g'), '', 0.000001);
     }
 
     public function testGetSolubility()
     {
-        $this->assertInstanceOf('\Berarma\AquariumToolbox\Conversion\Concentration', $this->compound->getSolubility());
+        $this->assertInstanceOf('\AquaTx\Conversion\Concentration', $this->compound->getSolubility());
         $this->assertEquals(360, $this->compound->getSolubility()->toUnit('mg/ml'));
     }
 
     public function testGetVolume()
     {
-        $this->assertInstanceOf('\Berarma\AquariumToolbox\Conversion\Volume', $this->compound->getVolume());
-        $this->assertEquals(0.9615, $this->compound->getVolume()->toUnit('ml'), null, 0.0001);
+        $this->assertInstanceOf('\AquaTx\Conversion\Volume', $this->compound->getVolume());
+        $this->assertEquals(0.9615, $this->compound->getVolume()->toUnit('ml'), '', 0.0001);
     }
 }

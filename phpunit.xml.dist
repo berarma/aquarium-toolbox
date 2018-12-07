@@ -12,7 +12,7 @@
 
     <!-- Add any additional test suites you want to run here -->
     <testsuites>
-        <testsuite name="Redsys Test Suite">
+        <testsuite name="AquariumToolbox Test Suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

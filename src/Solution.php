@@ -1,9 +1,9 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
-use Berarma\AquariumToolbox\Conversion\Mass;
-use Berarma\AquariumToolbox\Conversion\Volume;
-use Berarma\AquariumToolbox\Conversion\Concentration;
+use AquaTx\Conversion\Mass;
+use AquaTx\Conversion\Volume;
+use AquaTx\Conversion\Concentration;
 
 class Solution implements CompoundInterface
 {

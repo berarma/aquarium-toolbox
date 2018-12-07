@@ -1,7 +1,7 @@
 <?php
-namespace Berarma\AquariumToolbox\Tests;
+namespace AquaTx\Test;
 
-use Berarma\AquariumToolbox\Conversion\Concentration;
+use AquaTx\Conversion\Concentration;
 
 class ConcentrationTest extends \PHPUnit\Framework\TestCase
 {

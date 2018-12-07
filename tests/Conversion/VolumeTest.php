@@ -1,7 +1,7 @@
 <?php
-namespace Berarma\AquariumToolbox\Tests;
+namespace AquaTx\Test;
 
-use Berarma\AquariumToolbox\Conversion\Volume;
+use AquaTx\Conversion\Volume;
 
 class VolumeTest extends \PHPUnit\Framework\TestCase
 {
@@ -18,7 +18,7 @@ class VolumeTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, $volume->toUnit('l'));
         $this->assertEquals(1e1, $volume->toUnit('dl'));
         $this->assertEquals(1e2, $volume->toUnit('cl'));
-        $this->assertEquals(1e3, $volume->toUnit('ml'), null, 0.0001);
+        $this->assertEquals(1e3, $volume->toUnit('ml'), '', 0.0001);
         $volume = new Volume(1, 'dl');
         $this->assertEquals(1e-1, $volume->toUnit('l'));
         $this->assertEquals(1, $volume->toUnit('dl'));
@@ -30,7 +30,7 @@ class VolumeTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, $volume->toUnit('cl'));
         $this->assertEquals(1e1, $volume->toUnit('ml'));
         $volume = new Volume(1, 'ml');
-        $this->assertEquals(1e-3, $volume->toUnit('l'), null, 0.0001);
+        $this->assertEquals(1e-3, $volume->toUnit('l'), '', 0.0001);
         $this->assertEquals(1e-2, $volume->toUnit('dl'));
         $this->assertEquals(1e-1, $volume->toUnit('cl'));
         $this->assertEquals(1, $volume->toUnit('ml'));

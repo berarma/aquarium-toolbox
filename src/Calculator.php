@@ -6,17 +6,17 @@
  *
  * @copyright Bernat Arlandis Mañó
  */
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
-use Berarma\AquariumToolbox\Conversion\Volume;
-use Berarma\AquariumToolbox\Conversion\Concentration;
+use AquaTx\Conversion\Volume;
+use AquaTx\Conversion\Concentration;
 
 /**
  * Assistant class for typical calculations.
  *
  * Helps with the calculations typically used.
  */
-class AquariumAssistant
+class Calculator
 {
 
     /**

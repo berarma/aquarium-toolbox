@@ -6,15 +6,15 @@
  *
  * @copyright Bernat Arlandis Mañó
  */
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
-use Berarma\AquariumToolbox\Conversion\Mass;
-use Berarma\AquariumToolbox\Conversion\Volume;
+use AquaTx\Conversion\Mass;
+use AquaTx\Conversion\Volume;
 
 /**
  * Main class serving as the primary source for other objects and data.
  */
-class AquariumToolbox
+class Provider
 {
 
     /**

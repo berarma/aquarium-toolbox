@@ -1,7 +1,7 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
-use Berarma\AquariumToolbox\Conversion\Concentration;
+use AquaTx\Conversion\Concentration;
 
 class DosingMethod
 {

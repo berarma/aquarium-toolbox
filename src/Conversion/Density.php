@@ -1,5 +1,5 @@
 <?php
-namespace Berarma\AquariumToolbox\Conversion;
+namespace AquaTx\Conversion;
 
 class Density
 {

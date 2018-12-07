@@ -1,5 +1,5 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
 // nutrient
 //   method (EI = Tom Barr's Estimative Index, PPS = Edward's Perpetual Preservation System, Walstad = Diana Walstad's Natural Aquariums, PMDD = Poor Man's Dupla Drops)

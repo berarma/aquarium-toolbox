@@ -1,5 +1,5 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
 return [
     'dryCompounds' => require(__DIR__ . '/' . 'dry_compounds.php'),

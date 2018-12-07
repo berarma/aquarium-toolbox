@@ -1,5 +1,5 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
 // commercial product name
 //   elements = concentration in solution (percentage)

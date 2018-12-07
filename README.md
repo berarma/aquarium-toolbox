@@ -1,10 +1,10 @@
-# AquariumToolbox
+# aquarium-toolbox
 
 [![Build Status](https://travis-ci.com/berarma/aquarium-toolbox.svg?branch=master)](https://travis-ci.com/berarma/aquarium-toolbox)
 [![codecov](https://codecov.io/gh/berarma/aquarium-toolbox/branch/master/graph/badge.svg)](https://codecov.io/gh/berarma/aquarium-toolbox)
 
 This library can do typical calculations used in planted aquariums, like
-fertilizer dosing, many others will be added.
+fertilizer dosings.
 
 It's based on the excelent ideas and data of the late Carlo Flores'
 [yet-another-nutrient-calculator](https://github.com/flores/yet-another-nutrient-calculator).
@@ -20,7 +20,7 @@ The goals for this project are simplicity, reusability and reliablity.
 You can install this library using [composer](http://getcomposer.org).
 
 ```
-# composer.phar require berarma/AquariumToolbox
+# composer.phar require berarma/aquarium-toolbox
 ```
 
 ## Documentation

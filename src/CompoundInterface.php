@@ -6,7 +6,7 @@
  *
  * @copyright Bernat Arlandis Mañó
  */
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
 /**
  * Basic interface of a compound.

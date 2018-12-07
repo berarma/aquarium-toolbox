@@ -1,5 +1,5 @@
 <?php
-namespace Berarma\AquariumToolbox;
+namespace AquaTx;
 
 // compound
 //   elements = concencentration by mass (ppm)

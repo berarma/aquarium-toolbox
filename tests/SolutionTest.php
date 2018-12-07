@@ -1,10 +1,10 @@
 <?php
-namespace Berarma\AquariumToolbox\Tests;
+namespace AquaTx\Test;
 
-use Berarma\AquariumToolbox\Solution;
-use Berarma\AquariumToolbox\Compound;
-use Berarma\AquariumToolbox\Conversion\Mass;
-use Berarma\AquariumToolbox\Conversion\Volume;
+use AquaTx\Solution;
+use AquaTx\Compound;
+use AquaTx\Conversion\Mass;
+use AquaTx\Conversion\Volume;
 
 class SolutionTest extends \PHPUnit\Framework\TestCase
 {
@@ -35,14 +35,14 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
 
     public function testElement()
     {
-        $this->assertInstanceOf('\Berarma\AquariumToolbox\Conversion\Mass', $this->solution->element());
-        $this->assertEquals(613.3, $this->solution->element()->toUnit('mg'), null, 0.001);
-        $this->assertEquals(138.539, $this->solution->element('N')->toUnit('mg'), null, 0.001);
+        $this->assertInstanceOf('\AquaTx\Conversion\Mass', $this->solution->element());
+        $this->assertEquals(613.3, $this->solution->element()->toUnit('mg'), '', 0.001);
+        $this->assertEquals(138.539, $this->solution->element('N')->toUnit('mg'), '', 0.001);
     }
 
     public function testConcentration()
     {
-        $this->assertInstanceOf('\Berarma\AquariumToolbox\Conversion\Concentration', $this->solution->concentration());
+        $this->assertInstanceOf('\AquaTx\Conversion\Concentration', $this->solution->concentration());
         $this->assertEquals(1000, $this->solution->concentration()->toUnit('ppm'));
     }
 
@@ -62,7 +62,7 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
             ], new Mass(16, 'g')),
             new Volume(80, 'l')
         );
-        $this->assertEquals(3.3676, $solution->gh(), null, 1e-4);
+        $this->assertEquals(3.3676, $solution->gh(), '', 1e-4);
     }
 
     public function testKh()
@@ -77,6 +77,6 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
             ], new Mass(120, 'mg')),
             new Volume(1, 'l')
         );
-        $this->assertEquals(4.0052, $solution->kh(), null, 1e-4);
+        $this->assertEquals(4.0052, $solution->kh(), '', 1e-4);
     }
 }

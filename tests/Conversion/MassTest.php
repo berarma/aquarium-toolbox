@@ -1,7 +1,7 @@
 <?php
-namespace Berarma\AquariumToolbox\Tests;
+namespace AquaTx\Test;
 
-use Berarma\AquariumToolbox\Conversion\Mass;
+use AquaTx\Conversion\Mass;
 
 class MassTest extends \PHPUnit\Framework\TestCase
 {
@@ -18,7 +18,7 @@ class MassTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, $mass->toUnit('kg'));
         $this->assertEquals(1e3, $mass->toUnit('g'));
         $this->assertEquals(1e6, $mass->toUnit('mg'));
-        $this->assertEquals(1e9, $mass->toUnit('ug'), null, 0.0001);
+        $this->assertEquals(1e9, $mass->toUnit('ug'), '', 0.0001);
         $mass = new Mass(1, 'g');
         $this->assertEquals(1e-3, $mass->toUnit('kg'));
         $this->assertEquals(1, $mass->toUnit('g'));
@@ -30,7 +30,7 @@ class MassTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, $mass->toUnit('mg'));
         $this->assertEquals(1e3, $mass->toUnit('ug'));
         $mass = new Mass(1, 'ug');
-        $this->assertEquals(1e-9, $mass->toUnit('kg'), null, 0.0001);
+        $this->assertEquals(1e-9, $mass->toUnit('kg'), '', 0.0001);
         $this->assertEquals(1e-6, $mass->toUnit('g'));
         $this->assertEquals(1e-3, $mass->toUnit('mg'));
         $this->assertEquals(1, $mass->toUnit('ug'));

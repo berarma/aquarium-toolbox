@@ -11,7 +11,7 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
 
     protected $solution;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->solution = new Solution(
             new Compound([
@@ -36,8 +36,8 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
     public function testElement()
     {
         $this->assertInstanceOf('\AquaTx\Conversion\Mass', $this->solution->element());
-        $this->assertEquals(613.3, $this->solution->element()->toUnit('mg'), '', 0.001);
-        $this->assertEquals(138.539, $this->solution->element('N')->toUnit('mg'), '', 0.001);
+        $this->assertEqualsWithDelta(613.3, $this->solution->element()->toUnit('mg'), 0.001);
+        $this->assertEqualsWithDelta(138.539, $this->solution->element('N')->toUnit('mg'), 0.001);
     }
 
     public function testConcentration()
@@ -62,7 +62,7 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
             ], new Mass(16, 'g')),
             new Volume(80, 'l')
         );
-        $this->assertEquals(3.3676, $solution->gh(), '', 1e-4);
+        $this->assertEqualsWithDelta(3.3676, $solution->gh(), 1e-4);
     }
 
     public function testKh()
@@ -77,6 +77,6 @@ class SolutionTest extends \PHPUnit\Framework\TestCase
             ], new Mass(120, 'mg')),
             new Volume(1, 'l')
         );
-        $this->assertEquals(4.0052, $solution->kh(), '', 1e-4);
+        $this->assertEqualsWithDelta(4.0052, $solution->kh(), 1e-4);
     }
 }

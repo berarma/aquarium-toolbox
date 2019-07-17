@@ -11,7 +11,7 @@ class ProviderTest extends \PHPUnit\Framework\TestCase
 
     protected $provider;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->provider = new Provider();
     }

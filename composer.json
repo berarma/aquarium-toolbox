@@ -20,7 +20,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": ">=5.0",
-        "squizlabs/PHP_CodeSniffer": "3.*",
-        "apigen/apigen": "^4.1"
+        "squizlabs/PHP_CodeSniffer": "3.*"
     }
 }

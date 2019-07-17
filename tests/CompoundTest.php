@@ -9,7 +9,7 @@ class CompoundTest extends \PHPUnit\Framework\TestCase
 {
     protected $compound;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->compound = new Compound([
             'tsp' => 5200,
@@ -31,8 +31,8 @@ class CompoundTest extends \PHPUnit\Framework\TestCase
     public function testElement()
     {
         $this->assertInstanceOf('\AquaTx\Conversion\Mass', $this->compound->element());
-        $this->assertEquals(0.6133, $this->compound->element()->toUnit('g'), '', 0.0001);
-        $this->assertEquals(0.138539, $this->compound->element('N')->toUnit('g'), '', 0.000001);
+        $this->assertEqualsWithDelta(0.6133, $this->compound->element()->toUnit('g'), 0.0001);
+        $this->assertEqualsWithDelta(0.138539, $this->compound->element('N')->toUnit('g'), 0.000001);
     }
 
     public function testGetSolubility()
@@ -44,6 +44,6 @@ class CompoundTest extends \PHPUnit\Framework\TestCase
     public function testGetVolume()
     {
         $this->assertInstanceOf('\AquaTx\Conversion\Volume', $this->compound->getVolume());
-        $this->assertEquals(0.9615, $this->compound->getVolume()->toUnit('ml'), '', 0.0001);
+        $this->assertEqualsWithDelta(0.9615, $this->compound->getVolume()->toUnit('ml'), 0.0001);
     }
 }

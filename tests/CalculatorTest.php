@@ -17,7 +17,7 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
     protected $solution;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->assistant = new Calculator(new Volume(100, 'l'));
         $this->assistant->setVolume(new Volume(100, 'l'));
@@ -44,44 +44,38 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
     public function testTargetElement()
     {
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             1.6305,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound),
-            '',
             0.0001
         );
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             2.5860,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->compound, 'K'),
-            '',
             0.0001
         );
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             1.6575,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution),
-            '',
             0.0001
         );
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             2.6546,
             $this->assistant->targetElement(new Concentration(10, 'ppm'), $this->solution, 'K'),
-            '',
             0.0001
         );
     }
 
     public function testTargetDosingMethod()
     {
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             1.2229,
             $this->assistant->targetDosingMethod($this->dosingMethod, $this->compound, 'NO3'),
-            '',
             0.0001
         );
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             1.2380,
             $this->assistant->targetDosingMethod($this->dosingMethod, $this->solution, 'NO3'),
-            '',
             0.0001
         );
     }
@@ -99,9 +93,9 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
                 'Mn' => 0.0006,
             ],
         ], new Mass(16, 'g'));
-        $this->assertEquals(1.4851, $this->assistant->targetGh(4, $compound), '', 0.0001);
+        $this->assertEqualsWithDelta(1.4851, $this->assistant->targetGh(4, $compound), 0.0001);
         $solution = new Solution($compound, new Volume(1, 'l'));
-        $this->assertEquals(1.5071, $this->assistant->targetGh(4, $solution), '', 0.0001);
+        $this->assertEqualsWithDelta(1.5071, $this->assistant->targetGh(4, $solution), 0.0001);
     }
 
     public function testTargetKh()
@@ -114,6 +108,6 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
                 'Na' => 0.273665728,
             ],
         ], new Mass(120, 'mg'));
-        $this->assertEquals(99.8752, $this->assistant->targetKh(4, $compound), '', 0.0001);
+        $this->assertEqualsWithDelta(99.8752, $this->assistant->targetKh(4, $compound), 0.0001);
     }
 }

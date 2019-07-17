@@ -13,7 +13,7 @@ The goals for this project are simplicity, reusability and reliablity.
 
 ## Requirements
 
-  + PHP 5.4+
+  + PHP 5.6+
 
 ## How to use it
 
@@ -22,23 +22,6 @@ You can install this library using [composer](http://getcomposer.org).
 ```
 # composer.phar require berarma/aquarium-toolbox
 ```
-
-## Documentation
-
-To generate documentation you need to have ApiGen installed or install Composer
-dependencies with command:
-
-```
-# composer.phar install
-```
-
-Run ApiGen:
-
-```
-# vendor/bin/apigen generate
-```
-
-Open _docs/index.html_ in your browser.
 
 ## License
 

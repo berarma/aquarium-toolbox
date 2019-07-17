@@ -3,8 +3,8 @@ language: php
 sudo: false
 
 php:
-  - 5.6
   - 7.2
+  - 7.3
 
 cache:
   directories:
@@ -18,9 +18,9 @@ env:
 
 matrix:
   include:
-    - php: 7.1
+    - php: 7.3
       env: DEFAULT=0 CODE_COVERAGE=1
-    - php: 7.2
+    - php: 7.3
       env: DEFAULT=0 PHPCS=1
 
 install:

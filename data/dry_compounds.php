@@ -2,8 +2,8 @@
 namespace AquaTx;
 
 // compound
-//   elements = concencentration by mass (ppm)
-//   tsp = teaspoon (rounded to 5mL to avoid confusion) concentrations in milligrams
+//   elements = concencentration by mass proportion (total mass is 1)
+//   tsp = milligrams in a teaspoon (tsp rounded to 5mL)
 //   sol = maximum solubility in terms of mg/mL (at 20ºC?)
 //   target = most useful macro or micronutrient for our users
 

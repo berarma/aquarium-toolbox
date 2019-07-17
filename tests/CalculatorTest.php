@@ -20,7 +20,6 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
     public function setUp(): void
     {
         $this->assistant = new Calculator(new Volume(100, 'l'));
-        $this->assistant->setVolume(new Volume(100, 'l'));
         $this->compound = new Compound([
             'tsp' => 5200,
             'sol' => 360,
